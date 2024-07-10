@@ -20,10 +20,6 @@ build/
 out/
 coverage/
 
-# IDE/editor specific files
-.vscode/
-.idea/
-
 # Miscellaneous
 *.bak
 *.tmp
