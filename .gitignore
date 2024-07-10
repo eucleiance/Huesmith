@@ -1,1 +1,47 @@
-node_modules
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+pnpm-debug.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+
+# Build output
+dist/
+build/
+out/
+coverage/
+
+# IDE/editor specific files
+.vscode/
+.idea/
+
+# Miscellaneous
+*.bak
+*.tmp
+
+# Optional npm cache directory
+.npm/
+
+# Yarn Integrity file
+.yarn-integrity
+
+# TypeScript specific (if you add TypeScript later)
+*.tsbuildinfo
+
+# ESLint cache
+.eslintcache
+
+# Parcel-bundler cache (https://parceljs.org/)
+.cache
+
+# Output of 'npm pack'
+*.tgz
