@@ -19,10 +19,30 @@
       "type": "object",
       "title": "Huesmith",
       "properties": {
-        "huesmith.PrimaryBackground": {
+        "PrimaryBackgroundColor.Enable": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable Custom Primary Background Color",
+          "order": 0
+        },
+        "PrimaryBackgroundColor.Hexcode": {
           "type": "string",
           "default": "#0d0d0d",
-          "description": "The primary background color for the Huesmith extension."
+          "description": "Editor Background, Side Bar, Title Bar, Status Bar, Terminal...",
+          "order": 1
+        },
+        "PrimaryForegroundColor.Enable": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable Custom Primary Foreground Color",
+          "order": 2
+
+        },
+        "PrimaryForegroundColor.Hexcode": {
+          "type": "string",
+          "default": "#0d0d0d",
+          "description": "Title Bar Text, Directory/File Names, Tab Names, Breadcrumbs... ",
+          "order": 3
         }
       }
     }
