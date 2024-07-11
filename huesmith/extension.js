@@ -1,36 +1,72 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
-
-/**
- * @param {vscode.ExtensionContext} context
- */
 function activate(context) {
+  console.log('Congratulations, your extension "huesmith" is now active!');
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "huesmith" is now active!');
+  // Register the command
+  const disposable = vscode.commands.registerCommand('huesmith.updateColor', function () {
+    console.log('Command huesmith.updateColor executed.');
+    updateColorConfiguration();
+  });
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with  registerCommand
-	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('huesmith.helloWorld', function () {
-		// The code you place here will be executed every time your command is executed
+  context.subscriptions.push(disposable);
 
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from Huesmith!');
-	});
+  // Watch for configuration changes
+  vscode.workspace.onDidChangeConfiguration(event => {
+    if (event.affectsConfiguration('huesmith.PrimaryBackground')) {
+      console.log('PrimaryBackground configuration changed.');
+      updateColorConfiguration();
+    }
+  });
 
-	context.subscriptions.push(disposable);
+  // Initial update
+  updateColorConfiguration();
 }
 
-// This method is called when your extension is deactivated
+function updateColorConfiguration() {
+  const config = vscode.workspace.getConfiguration('huesmith');
+  const primaryBackground = config.get('PrimaryBackground', '#0d0d0d');
+
+  console.log('PrimaryBackground value:', primaryBackground);
+
+  // Get the current workbench color customizations
+  const currentColorCustomizations = vscode.workspace.getConfiguration('workbench').get('colorCustomizations') || {};
+
+  console.log('Current workbench.colorCustomizations:', currentColorCustomizations);
+
+  // Update the color customizations with the new color
+  const updatedColorCustomizations = {
+    ...currentColorCustomizations,
+    "activityBar.background": primaryBackground,
+    "sideBar.background": primaryBackground,
+    "sideBarSectionHeader.background": primaryBackground,
+    "statusBar.background": primaryBackground,
+    "titleBar.activeBackground": primaryBackground,
+    "titleBar.inactiveBackground": primaryBackground,
+    "editor.background": primaryBackground,
+    "editorGroupHeader.tabsBackground": primaryBackground,
+    "editorGutter.background": primaryBackground,
+    "tab.inactiveBackground": primaryBackground,
+    "tab.unfocusedInactiveBackground": primaryBackground,
+    "breadcrumb.background": primaryBackground,
+    "panel.background": primaryBackground,
+    "terminal.background": primaryBackground,
+  };
+
+  console.log('Updated workbench.colorCustomizations:', updatedColorCustomizations);
+
+  // Update the settings with the new color customizations
+  vscode.workspace.getConfiguration('workbench').update('colorCustomizations', updatedColorCustomizations, vscode.ConfigurationTarget.Global)
+    .then(() => {
+      console.log('Updated workbench.colorCustomizations in settings.json');
+    }, error => {
+      console.error('Failed to update workbench.colorCustomizations:', error);
+    });
+}
+
 function deactivate() {}
 
 module.exports = {
-	activate,
-	deactivate
-}
+  activate,
+  deactivate
+};

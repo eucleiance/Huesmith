@@ -4,18 +4,28 @@
   "description": "Forge your code in vibrant hues.",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.91.0"
+    "vscode": "^1.89.1"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
     "commands": [{
-      "command": "huesmith.helloWorld",
-      "title": "Hello World"
-    }]
+      "command": "huesmith.updateColor",
+      "title": "Huesmith: Update Color"
+    }],
+    "configuration": {
+      "type": "object",
+      "title": "Huesmith",
+      "properties": {
+        "huesmith.PrimaryBackground": {
+          "type": "string",
+          "default": "#0d0d0d",
+          "description": "The primary background color for the Huesmith extension."
+        }
+      }
+    }
   },
   "scripts": {
     "lint": "eslint .",
