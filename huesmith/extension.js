@@ -19,8 +19,13 @@ function activate(context) {
     }
   });
 
-  // Initial update
-  update('PrimaryBackground');
+  vscode.workspace.onDidChangeConfiguration(event => {
+    if (event.affectsConfiguration('PrimaryForeground.HexCode') || event.affectsConfiguration('PrimaryForeground.Enable')) {
+      console.log('Primaryforeground Settings Changed');
+      update('PrimaryForeground');
+    }
+  });
+
 }
 
 function status(category) {
@@ -65,6 +70,22 @@ function updateTheme(category, isEnabled, HexCode, currentColorCustomizations) {
       "breadcrumb.background": HexCode,
       "panel.background": HexCode,
       "terminal.background": HexCode,
+    };
+  } else if (category === 'PrimaryForeground' && isEnabled === true) {
+    console.log('Updating theme with:', {
+      category,
+      isEnabled,
+      HexCode,
+      currentColorCustomizations
+    });
+    return {
+      ...currentColorCustomizations,
+      "activityBar.inactiveForeground": HexCode,
+      "sideBar.foreground": HexCode,
+      "titleBar.activeForeground": HexCode,
+      "titleBar.inactiveForeground": HexCode,
+      "tab.inactiveForeground": HexCode,
+      "tab.unfocusedInactiveForeground": HexCode,
     };
   }
   return currentColorCustomizations;
