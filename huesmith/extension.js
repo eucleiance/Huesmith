@@ -13,7 +13,7 @@ function activate(context) {
 
   // Watch for configuration changes
   vscode.workspace.onDidChangeConfiguration(event => {
-    if (event.affectsConfiguration('huesmith.PrimaryBackground')) {
+    if (event.affectsConfiguration('PrimaryBackground.HexCode')) {
       console.log('PrimaryBackground configuration changed.');
       updateColorConfiguration();
     }
@@ -24,8 +24,8 @@ function activate(context) {
 }
 
 function updateColorConfiguration() {
-  const config = vscode.workspace.getConfiguration('huesmith');
-  const primaryBackground = config.get('PrimaryBackground', '#0d0d0d');
+  const config = vscode.workspace.getConfiguration('PrimaryBackground');
+  const primaryBackground = config.get('HexCode');
 
   console.log('PrimaryBackground value:', primaryBackground);
 
@@ -55,13 +55,16 @@ function updateColorConfiguration() {
 
   console.log('Updated workbench.colorCustomizations:', updatedColorCustomizations);
 
-  // Update the settings with the new color customizations
-  vscode.workspace.getConfiguration('workbench').update('colorCustomizations', updatedColorCustomizations, vscode.ConfigurationTarget.Global)
-    .then(() => {
-      console.log('Updated workbench.colorCustomizations in settings.json');
-    }, error => {
-      console.error('Failed to update workbench.colorCustomizations:', error);
-    });
+  //
+// Update the settings with the new color customizations
+vscode.workspace.getConfiguration('workbench').update('colorCustomizations', updatedColorCustomizations, vscode.ConfigurationTarget.Global);
+  // // Update the settings with the new color customizations
+  // vscode.workspace.getConfiguration('workbench').update('colorCustomizations', updatedColorCustomizations, vscode.ConfigurationTarget.Global)
+  //   .then(() => {
+  //     console.log('Updated workbench.colorCustomizations in settings.json');
+  //   }, error => {
+  //     console.error('Failed to update workbench.colorCustomizations:', error);
+  //   });
 }
 
 function deactivate() {}

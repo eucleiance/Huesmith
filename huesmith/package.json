@@ -2,6 +2,7 @@
   "name": "huesmith",
   "displayName": "Huesmith",
   "description": "Forge your code in vibrant hues.",
+  "publisher": "Eucleiance",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.89.1"
@@ -20,29 +21,56 @@
       "title": "Huesmith",
       "properties": {
         "PrimaryBackgroundColor.Enable": {
+          "title": "Hello",
           "type": "boolean",
           "default": false,
           "description": "Enable Custom Primary Background Color",
-          "order": 0
+          "order": 1
         },
-        "PrimaryBackgroundColor.Hexcode": {
+        "PrimaryBackground.HexCode": {
           "type": "string",
           "default": "#0d0d0d",
           "description": "Editor Background, Side Bar, Title Bar, Status Bar, Terminal...",
-          "order": 1
+          "order": 2
         },
         "PrimaryForegroundColor.Enable": {
           "type": "boolean",
           "default": false,
           "description": "Enable Custom Primary Foreground Color",
-          "order": 2
+          "order": 3
 
         },
-        "PrimaryForegroundColor.Hexcode": {
+        "PrimaryForegroundColor.HexCode": {
           "type": "string",
           "default": "#0d0d0d",
           "description": "Title Bar Text, Directory/File Names, Tab Names, Breadcrumbs... ",
-          "order": 3
+          "order": 4
+        },
+        "PrimaryForegroundColor [Bold].Enable": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable Custom Primary Foreground Color",
+          "order": 5
+
+        },
+        "PrimaryForegroundColor [Bold].HexCode": {
+          "type": "string",
+          "default": "#0d0d0d",
+          "description": "Title Bar Text, Directory/File Names, Tab Names, Breadcrumbs... ",
+          "order": 6
+        },
+        "CursorColor.Enable": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable Custom Cursor Color",
+          "order": 7
+
+        },
+        "CursorColor.HexCode": {
+          "type": "string",
+          "default": "#FFFFFFAA",
+          "description": "Title Bar Text, Directory/File Names, Tab Names, Breadcrumbs... ",
+          "order": 8
         }
       }
     }
