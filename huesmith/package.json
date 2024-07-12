@@ -7,6 +7,9 @@
   "engines": {
     "vscode": "^1.89.1"
   },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "categories": [
     "Other"
   ],
@@ -20,7 +23,7 @@
       "type": "object",
       "title": "Huesmith",
       "properties": {
-        "PrimaryBackgroundColor.Enable": {
+        "PrimaryBackground.Enable": {
           "title": "Hello",
           "type": "boolean",
           "default": false,
@@ -33,27 +36,27 @@
           "description": "Editor Background, Side Bar, Title Bar, Status Bar, Terminal...",
           "order": 2
         },
-        "PrimaryForegroundColor.Enable": {
+        "PrimaryForeground.Enable": {
           "type": "boolean",
           "default": false,
           "description": "Enable Custom Primary Foreground Color",
           "order": 3
 
         },
-        "PrimaryForegroundColor.HexCode": {
+        "PrimaryForeground.HexCode": {
           "type": "string",
           "default": "#0d0d0d",
           "description": "Title Bar Text, Directory/File Names, Tab Names, Breadcrumbs... ",
           "order": 4
         },
-        "PrimaryForegroundColor [Bold].Enable": {
+        "PrimaryForeground [Bold].Enable": {
           "type": "boolean",
           "default": false,
           "description": "Enable Custom Primary Foreground Color",
           "order": 5
 
         },
-        "PrimaryForegroundColor [Bold].HexCode": {
+        "PrimaryForeground [Bold].HexCode": {
           "type": "string",
           "default": "#0d0d0d",
           "description": "Title Bar Text, Directory/File Names, Tab Names, Breadcrumbs... ",
