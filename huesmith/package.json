@@ -15,10 +15,12 @@
   ],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "huesmith.updateColor",
-      "title": "Huesmith: Update Color"
-    }],
+    "commands": [
+      {
+        "command": "huesmith.updateColor",
+        "title": "Huesmith: Update Color"
+      }
+    ],
     "configuration": {
       "type": "object",
       "title": "Huesmith",
@@ -32,7 +34,7 @@
         },
         "PrimaryBackground.HexCode": {
           "type": "string",
-          "default": "#0d0d0d",
+          "default": "#0A0A0C",
           "description": "Editor Background, Side Bar, Title Bar, Status Bar, Terminal...",
           "order": 2
         },
@@ -45,7 +47,7 @@
         },
         "SecondaryBackground.HexCode": {
           "type": "string",
-          "default": "#0f0f0f",
+          "default": "#121218",
           "description": "Editor Background, Side Bar, Title Bar, Status Bar, Terminal...",
           "order": 4
         },
@@ -57,7 +59,7 @@
         },
         "PrimaryForeground.HexCode": {
           "type": "string",
-          "default": "#0d0d0d",
+          "default": "#FFFFFF",
           "description": "Active Title Bar Text, Active Directory/File Names, Active Tab Names... ",
           "order": 6
         },
@@ -66,11 +68,10 @@
           "default": false,
           "description": "Enable Custom Secondary Foreground Color",
           "order": 7
-
         },
         "SecondaryForeground.HexCode": {
           "type": "string",
-          "default": "#0d0d0d",
+          "default": "#77779F",
           "description": "Title Bar Text, Directory/File Names, Tab Names, Breadcrumbs... ",
           "order": 8
         },
@@ -82,21 +83,9 @@
         },
         "Borders.HexCode": {
           "type": "string",
-          "default": "#FFFFFFAA",
+          "default": "#000000",
           "description": "HexCode for Borders.",
           "order": 10
-        },
-        "CursorColor.Enable": {
-          "type": "boolean",
-          "default": false,
-          "description": "Enable Custom Cursor Color",
-          "order": 11
-        },
-        "CursorColor.HexCode": {
-          "type": "string",
-          "default": "#FFFFFFAA",
-          "description": "HexCode for Cursor.",
-          "order": 12
         }
       }
     }

@@ -6,16 +6,13 @@ function activate(context) {
   // Register the command
   const disposable = vscode.commands.registerCommand('huesmith.updateColor', function () {
     console.log('Command huesmith.updateColor executed.');
-    // update('PrimaryBackground');
-    // console.log('Notificasionnnnnn...')
-    vscode.window.showInformationMessage('Notificasionnnn....')
+    vscode.window.showInformationMessage('Notificasionnnn....');
   });
 
   context.subscriptions.push(disposable);
 
   // Watch for configuration changes
-  // Register configuration change listeners
-  const categories = ['PrimaryBackground', 'SecondaryBackground', 'PrimaryForeground', 'SecondaryForeground', 'Borders'];
+  const categories = ['PrimaryBackground', 'SecondaryBackground', 'PrimaryForeground', 'SecondaryForeground', 'Borders', 'punctuation'];
   categories.forEach(category => {
     registerConfigurationListener(category);
   });
@@ -32,7 +29,6 @@ function registerConfigurationListener(category) {
     }
   });
 }
-
 
 function status(category) {
   const enableStatus = vscode.workspace.getConfiguration(category).get('Enable');
@@ -55,17 +51,30 @@ function update(category) {
 }
 
 function updateTheme(category, isEnabled, HexCode, currentColorCustomizations) {
+  // Handle workbench color customizations
   if (keysToUpdate[category]) {
     keysToUpdate[category].forEach(key => {
       if (isEnabled) {
         currentColorCustomizations[key] = HexCode;
-      }
-      if (!isEnabled) {
+      } else {
         delete currentColorCustomizations[key];
       }
-    })
+    });
   }
-  // console.log('Current color customizations after update:', currentColorCustomizations);
+
+  // Handle token color customizations
+  if (tokenColorKeysToUpdate[category]) {
+    currentColorCustomizations["editor.tokenColorCustomizations"] = currentColorCustomizations["editor.tokenColorCustomizations"] || { "textMateRules": [] };
+    tokenColorKeysToUpdate[category].forEach(rule => {
+      if (isEnabled) {
+        rule.settings.foreground = HexCode;
+        currentColorCustomizations["editor.tokenColorCustomizations"].textMateRules.push(rule);
+      } else {
+        currentColorCustomizations["editor.tokenColorCustomizations"].textMateRules = currentColorCustomizations["editor.tokenColorCustomizations"].textMateRules.filter(existingRule => existingRule.scope !== rule.scope);
+      }
+    });
+  }
+
   return currentColorCustomizations;
 }
 
@@ -97,11 +106,6 @@ const keysToUpdate = {
     "editorWidget.background",
     "tab.activeBackground",
     "menu.background",
-    "tab.hoverBackground",
-    "menubar.selectionBackground",
-    "editorHoverWidget.background",
-    "quickInput.background",
-    "quickInputTitle.background",
   ],
   PrimaryForeground: [
     "list.hoverForeground",
@@ -123,7 +127,6 @@ const keysToUpdate = {
     "titleBar.inactiveForeground",
     "tab.inactiveForeground",
     "tab.unfocusedInactiveForeground",
-    "menu.foreground",
   ],
   Borders: [
     "focusBorder",
@@ -153,9 +156,20 @@ const keysToUpdate = {
     "debugToolBar.border",
     "notificationToast.border",
     "notifications.border",
-    "list.focusOutline",
+    "list.focusoutline",
   ]
+};
 
+const tokenColorKeysToUpdate = {
+  punctuation: [
+    {
+      "scope": "punctuation.separator",
+      "settings": {
+        "foreground": null // Placeholder for hex code
+      }
+    }
+  ],
+  // Add more token customizations as needed
 };
 
 function deactivate() { }
