@@ -36,44 +36,67 @@
           "description": "Editor Background, Side Bar, Title Bar, Status Bar, Terminal...",
           "order": 2
         },
+        "SecondaryBackground.Enable": {
+          "title": "Hello",
+          "type": "boolean",
+          "default": false,
+          "description": "Enable Custom Secondary Background Color",
+          "order": 3
+        },
+        "SecondaryBackground.HexCode": {
+          "type": "string",
+          "default": "#0f0f0f",
+          "description": "Editor Background, Side Bar, Title Bar, Status Bar, Terminal...",
+          "order": 4
+        },
         "PrimaryForeground.Enable": {
           "type": "boolean",
           "default": false,
           "description": "Enable Custom Primary Foreground Color",
-          "order": 3
-
+          "order": 5
         },
         "PrimaryForeground.HexCode": {
           "type": "string",
           "default": "#0d0d0d",
-          "description": "Title Bar Text, Directory/File Names, Tab Names, Breadcrumbs... ",
-          "order": 4
+          "description": "Active Title Bar Text, Active Directory/File Names, Active Tab Names... ",
+          "order": 6
         },
-        "PrimaryForeground [Bold].Enable": {
+        "SecondaryForeground.Enable": {
           "type": "boolean",
           "default": false,
-          "description": "Enable Custom Primary Foreground Color",
-          "order": 5
+          "description": "Enable Custom Secondary Foreground Color",
+          "order": 7
 
         },
-        "PrimaryForeground [Bold].HexCode": {
+        "SecondaryForeground.HexCode": {
           "type": "string",
           "default": "#0d0d0d",
           "description": "Title Bar Text, Directory/File Names, Tab Names, Breadcrumbs... ",
-          "order": 6
+          "order": 8
+        },
+        "Borders.Enable": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable Custom Border Color",
+          "order": 9
+        },
+        "Borders.HexCode": {
+          "type": "string",
+          "default": "#FFFFFFAA",
+          "description": "HexCode for Borders.",
+          "order": 10
         },
         "CursorColor.Enable": {
           "type": "boolean",
           "default": false,
           "description": "Enable Custom Cursor Color",
-          "order": 7
-
+          "order": 11
         },
         "CursorColor.HexCode": {
           "type": "string",
           "default": "#FFFFFFAA",
-          "description": "Title Bar Text, Directory/File Names, Tab Names, Breadcrumbs... ",
-          "order": 8
+          "description": "HexCode for Cursor.",
+          "order": 12
         }
       }
     }
