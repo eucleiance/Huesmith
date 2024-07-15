@@ -48,7 +48,7 @@
         "SecondaryBackground.HexCode": {
           "type": "string",
           "default": "#121218",
-          "description": "Editor Background, Side Bar, Title Bar, Status Bar, Terminal...",
+          "description": "Menus, Notifications, Input Fields, Hovers...",
           "order": 4
         },
         "PrimaryForeground.Enable": {

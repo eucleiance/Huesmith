@@ -1,17 +1,7 @@
 const vscode = require('vscode');
 
-function activate(context) {
-  console.log('Congratulations, your extension "huesmith" is now active!');
-
-  // Register the command
-  const disposable = vscode.commands.registerCommand('huesmith.updateColor', function () {
-    console.log('Command huesmith.updateColor executed.');
-    // update('PrimaryBackground');
-    // console.log('Notificasionnnnnn...')
-    vscode.window.showInformationMessage('Notificasionnnn....')
-  });
-
-  context.subscriptions.push(disposable);
+function activate() {
+  // console.log('Congratulations, your extension "huesmith" is now active!');
 
   // Watch for configuration changes
   // Register configuration change listeners
@@ -27,7 +17,7 @@ function registerConfigurationListener(category) {
     const enableSetting = `${category}.Enable`;
 
     if (event.affectsConfiguration(hexCodeSetting) || event.affectsConfiguration(enableSetting)) {
-      console.log(`${category} Settings Changed`);
+      // console.log(`${category} Settings Changed`);
       update(category);
     }
   });
@@ -36,7 +26,7 @@ function registerConfigurationListener(category) {
 
 function status(category) {
   const enableStatus = vscode.workspace.getConfiguration(category).get('Enable');
-  console.log(`Status of ${category}:`, enableStatus);
+  // console.log(`Status of ${category}:`, enableStatus);
   return enableStatus;
 }
 
@@ -46,11 +36,11 @@ function update(category) {
     const currentConfig = vscode.workspace.getConfiguration('workbench').get('colorCustomizations') || {};
     const updatedConfig = updateTheme(category, status(category), inputHex, { ...currentConfig }); // Ensure a copy is made
 
-    console.log('Updating configuration:', updatedConfig);
+    // console.log('Updating configuration:', updatedConfig);
 
     vscode.workspace.getConfiguration('workbench').update('colorCustomizations', updatedConfig, vscode.ConfigurationTarget.Global);
   } catch (error) {
-    console.error(`Failed to update color configuration for ${category}:`, error);
+    // console.error(`Failed to update color configuration for ${category}:`, error);
   }
 }
 
