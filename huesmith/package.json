@@ -29,62 +29,69 @@
           "title": "Hello",
           "type": "boolean",
           "default": false,
-          "description": "Enable Custom Primary Background Color",
+          "description": "Enable a Custom Primary Background Color for the Editor.",
           "order": 1
         },
         "PrimaryBackground.HexCode": {
           "type": "string",
-          "default": "#0A0A0C",
-          "description": "Editor Background, Side Bar, Title Bar, Status Bar, Terminal...",
+          "default": "#0A0A0F",
+          "description": "Set the HexCode for the Primary Background Color (E.g., Editor Background, Side Bar, Title Bar, Status Bar, Terminal...)",
           "order": 2
         },
         "SecondaryBackground.Enable": {
-          "title": "Hello",
+          "title": "Enable Secondary Background",
           "type": "boolean",
           "default": false,
-          "description": "Enable Custom Secondary Background Color",
+          "description": "Enable a Custom Secondary Background Color for the Editor",
           "order": 3
         },
         "SecondaryBackground.HexCode": {
+          "title": "Secondary Background Color",
           "type": "string",
           "default": "#121218",
-          "description": "Menus, Notifications, Input Fields, Hovers...",
+          "description": "Set the HexCode for the secondary background color (E.g., menus, Notifications, Input Fields, Hovers...)",
           "order": 4
         },
         "PrimaryForeground.Enable": {
+          "title": "Enable Primary Foreground",
           "type": "boolean",
           "default": false,
-          "description": "Enable Custom Primary Foreground Color",
+          "description": "Enable a Custom Primary Foreground Color for Active Elements.",
           "order": 5
         },
         "PrimaryForeground.HexCode": {
+          "title": "Primary Foreground Color",
           "type": "string",
           "default": "#FFFFFF",
-          "description": "Active Title Bar Text, Active Directory/File Names, Active Tab Names... ",
+          "description": "Set the HexCode for the Primary Foreground Color (E.g., Title Bar, Directories/Files, Tabs...)",
           "order": 6
         },
         "SecondaryForeground.Enable": {
+          "title": "Enable Secondary Foreground",
           "type": "boolean",
           "default": false,
-          "description": "Enable Custom Secondary Foreground Color",
+          "description": "Enable a Custom Secondary Foreground Color for Inactive Elements.",
           "order": 7
         },
         "SecondaryForeground.HexCode": {
+          "title": "Secondary Foreground Color",
           "type": "string",
           "default": "#77779F",
-          "description": "Title Bar Text, Directory/File Names, Tab Names, Breadcrumbs... ",
+          "description": "Set the HexCode the Secondary Foreground Color (E.g., (Inactive) Title Bar, Directories/Files, Tabs, Breadcrumbs...)",
           "order": 8
         },
         "Borders.Enable": {
+          "title": "Enable Borders",
           "type": "boolean",
           "default": false,
-          "description": "Enable Custom Border Color",
+          "description": "Enable a Custom Border Color for the Editor.",
           "order": 9
         },
         "Borders.HexCode": {
+          "title": "Border Color",
           "type": "string",
           "default": "#000000",
-          "description": "HexCode for Borders.",
+          "description": "Set the HexCode for the Border Color.",
           "order": 10
         }
       }
