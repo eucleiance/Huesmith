@@ -1,65 +1,50 @@
-# huesmith README
+# Huesmith - VSCod(e/ium) Extension
 
-This is the README for your extension "huesmith". After writing up a brief description, we recommend including the following sections.
+## Change bulk of your Editor's colors in seconds.
 
-## Features
+#### Only like the Syntax Colors of Active Theme? Have Custom Colors for Everything Else.
+![FullDemo](huesmith/images/FULL_Q90.gif)
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+#### Don't like the Theme's Background Accent? Only keep the Foreground & Syntax Colors
+![PFG_SFG](huesmith/images/PFG_SFG_Q100.gif)
 
-For example if there is an image subfolder under your extension project workspace:
+#### Like the Accent but not the Background? Keep all the Theme's Accent colors with Custom Primary Background.
+![Secondary_BG](huesmith/images/SBG_Q100.gif)
 
-\!\[feature X\]\(images/feature-x.png\)
+> All Modifications are written to settings.json. If you want further FineTuning, you can do so by editing them in settings.json.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
 
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+## Available Options
+- Primary Background
+  - Editor
+  - Side Bar
+  - Tabs
+  - Terminal
+  - Activity Bar
+  - Section Header
+  - Title Bar
+  - Editor Gutter
+  - Breadcrumbs
+  - Panels
+  - Minimap
+- Secondary Background
+  - Notifications
+  - Menu Bar
+  - Input Fields
+  - Editor Widgets
+  - [onHover + Focus] List
+  - [onFocus] Activity Bar
+  - [active] Tab
+- Primary Foreground - Active/Focused Texts
+  - Lists
+  - Activity Bar
+  - SideBar
+  - StatusBar
+  - Tab
+- Secondary Foreground - Inactive/Unfocused Texts
+  - Activity Bar 
+  - Side Bar 
+  - Title Bar 
+  - Menu 
+- Borders
+  - All Borders
