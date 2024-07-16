@@ -1,6 +1,0 @@
-"activityBar.inactiveForeground": "#AAAAAA",
-"sideBar.foreground": "#AAAAAA",
-"titleBar.activeForeground": "#AAAAAA",
-"titleBar.inactiveForeground": "#AAAAAA",
-"tab.inactiveForeground": "#AAAAAA",
-"tab.unfocusedInactiveForeground": "#AAAAAA",
