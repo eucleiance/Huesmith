@@ -5,8 +5,10 @@
 #### Only like the Syntax Colors of Active Theme? Have Custom Colors for Everything Else.
 ![FullDemo](images/5_FULL_lq60_mq_80_r5_fast_w1400.gif)
 
+
 #### Don't like the Theme's Background Accent? Only keep the Foreground & Syntax Colors
 ![PFG_SFG](images/5_PFG_SFG_lq60_mq_80_r5_fast_w1400.gif)
+
 
 #### Like the Accent but not the Background? Keep all the Theme's Accent colors with Custom Primary Background.
 ![Secondary_BG](images/5_SBG_lq60_mq_80_r5_fast_w1400.gif)

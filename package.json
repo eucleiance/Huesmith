@@ -4,8 +4,9 @@
   "description": "Forge your code in vibrant hues.",
   "publisher": "Eucleiance",
   "version": "0.0.2",
+  "icon": "images/icon.jpg",
   "engines": {
-    "vscode": "^1.91.0"
+    "vscode": "^1.50.0"
   },
   "repository": {
     "type": "git",
